@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/mobilebone.css">
+</head>
+<body>
+    <div id='page1' class='page out' data-title='page1'>
+        <a href='#page2'>to page2</a>
+    </div>
+    <div id='page2' class='page out' data-title='page2'>
+        <a href='#page1' data-rel="back">back to page1</a>
+        <a href='page3.html' data-reload data-mask>to page3</a>
+        <p style='position:relative'>
+            <a href='page3.html' data-reload data-mask>to page3</a>
+        </p>
+    </div>
+    <script src="../js/fastclick.js"></script>
+    <script>
+    	FastClick.attach(document.body);
+    </script>
+    <script src="../js/mobilebone.js"></script>
+</body>
+</html>
