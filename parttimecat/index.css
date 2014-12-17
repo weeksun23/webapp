@@ -1,5 +1,5 @@
 .page-root > .content{position: absolute;bottom: 50px;top:0;left:0;right:0;}
-.header{text-align: center;padding: 10px 8px;top:0}
+.header{text-align: center;padding: 10px 8px;background-color: #fff;z-index: 10;position: relative;}
 .header>span{font-size: 20px;font-weight: bolder;}
 .header>a{display: block;}
 body>.footer{
@@ -15,7 +15,7 @@ body>.footer.out { -webkit-transform: translateX(-100%); transform: translateX(-
 .nav>a.active{color:#E59846;}
 .nav>a>i{display: block;margin: 2px 0}
 
-.list>div.list-item:last-child{border-bottom:1px solid #ccc;}
+.list>.list-item:last-child{border-bottom:1px solid #ccc;}
 .list-item{border-top:1px solid #ccc;}
 .list-item-icon{padding: 15px;}
 .list-item-arrow{padding: 8px;color: #666}

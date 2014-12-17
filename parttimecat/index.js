@@ -1,4 +1,5 @@
 (function(){
+	new IScroll("#indexList");
 	Mobilebone.callback = function(pageInto, pageOut) {
 		if(pageInto == pageOut) return;
 		var inIsWindow = pageInto.getAttribute("data-window") !== null;
