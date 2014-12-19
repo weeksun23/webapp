@@ -9,33 +9,37 @@
     <link rel="stylesheet" type="text/css" href="../css/base.css">
     <link rel="stylesheet" type="text/css" href="index.css">
 </head>
-<body>
+<body ms-controller='cat'>
     <div id='index' class='page out page-root'>
         <div class='content wbv'>
-            <div class='header clearfix'> 
-                <span class='orange'>兼职猫</span>
-                <a href='#indexSearch' class='fr green'><i class='icon-search icon-2x'></i></a>
+            <div class='header'>
+            	<span class='header-title orange wb-flex1'>兼职猫</span>
+           		<div class='header-btn right'>
+           			<div>
+           				<a href='#indexSearch' class='green'><i class='icon-search icon-2x'></i></a>
+           			</div>
+                </div>
             </div>
             <div class='wb-flex1' id='indexList'>
                 <ul class='list'>
-                    <li class='list-item wb wb-bac'>
+                    <li class='list-item wb wb-bac' ms-click='$mayLike()'>
                         <div class='list-item-icon'><i class='icon-heart-empty icon-2x red'></i></div>
                         <div class='list-item-content wb-flex1 fz18'>
-                            你可能感兴趣的
+                           	你可能感兴趣的
                         </div>
                         <div class='list-item-arrow'><i class='icon-chevron-right icon-2x'></i></div>
                     </li>
                     <li class='list-item wb wb-bac'>
                         <div class='list-item-icon'><i class='icon-calendar icon-2x blue'></i></div>
                         <div class='list-item-content wb-flex1 fz18'>
-                            最新兼职
+                          	  最新兼职
                         </div>
                         <div class='list-item-arrow'><i class='icon-chevron-right icon-2x'></i></div>
                     </li>
                     <li class='list-item wb wb-bac'>
                         <div class='list-item-icon'><i class='icon-camera-retro icon-2x green'></i></div>
                         <div class='list-item-content wb-flex1 fz18'>
-                            兼职旅行
+                          	  兼职旅行
                         </div>
                         <div class='list-item-arrow'><i class='icon-chevron-right icon-2x'></i></div>
                     </li>
@@ -45,24 +49,24 @@
     </div>
     <div id='categoryNav' class='page out page-root'>
         <div class='content wbv'>
-            <div class='header clearfix'> 
-                <span class='color1'>分类导航</span>
-            </div>
+            <div class='header'>
+	        	<span class='header-title orange'>分类导航</span>
+	        </div>
             <div class='category-type'>
                 <a href='#categoryList'>选择类型</a>
                 <a href='#categoryList'>选择区域</a>
                 <a href='#categoryList'>选择网站</a>
             </div>
             <div class='content wb-flex1'>
-
+				
             </div>
         </div>
     </div>
     <div id='resume' class='page out page-root'>
         <div class='content wbv'>
-            <div class='header clearfix'> 
-                <span class='color1'>求职简历</span>
-            </div>
+            <div class='header'>
+            	<span class='header-title color1'>求职简历</span>
+	        </div>
             <div class='content wb-flex1'>
 
             </div>
@@ -70,9 +74,9 @@
     </div>
     <div id='personalCenter' class='page out page-root'>
         <div class='content wbv'>
-            <div class='header clearfix'> 
-                <span class='color1'>个人中心</span>
-            </div>
+            <div class='header'>
+            	<span class='header-title color1'>个人中心</span>
+	        </div>
             <div class='content wb-flex1'>
 
             </div>
@@ -81,35 +85,41 @@
     <!-- 窗口begin -->
     <!-- 搜索页面 -->
     <div id='indexSearch' class='page out page-window wbv' data-window>
-        <div class='header clearfix'> 
-            <a href='#index' class='fl' data-rel='back'><i class='icon-chevron-left icon-2x'></i></a>
-            <span class='orange'>搜索</span>
+    	<div class='header'>
+           	<span class='header-title orange wb-flex1'>搜索</span>
+       		<div class='header-btn left'>
+       			<div>
+       				<a href='#index' data-rel='back'><i class='icon-chevron-left icon-2x'></i></a>
+       			</div>
+            </div>
         </div>
         <div class='wb-flex1'>
         </div>
     </div>
     <!-- 类型列表 -->
     <div id='categoryList' class='page out page-window wbv' data-window>
-        <div class='header clearfix'> 
-            <a href='#categoryNav' class='fl' data-rel='back'><i class='icon-chevron-left icon-2x'></i></a>
-            <span class='color1' id='categoryType'>兼职类型</span>
+        <div class='header wb wb-bac'>
+        	<div class='header-btn'>
+            	<a href='#categoryNav' data-rel='back'><i class='icon-chevron-left icon-2x'></i></a>
+            </div>
+        	<div class='header-title orange wb-flex1'>兼职类型</div>
         </div>
         <ul class='wb-flex1 list'>
             <li class='list-item wb wb-bac'>
                 <div class='list-item-content wb-flex1 fz14 pad8'>
-                    全部
+                  	全部
                 </div>
                 <div class='list-item-arrow'><i class='icon-chevron-right icon-1x'></i></div>
             </li>
             <li class='list-item wb wb-bac'>
                 <div class='list-item-content wb-flex1 fz14 pad8'>
-                    其它
+                  	其它
                 </div>
                 <div class='list-item-arrow'><i class='icon-chevron-right icon-1x'></i></div>
             </li>
             <li class='list-item wb wb-bac'>
                 <div class='list-item-content wb-flex1 fz14 pad8'>
-                    销售
+                  	销售
                 </div>
                 <div class='list-item-arrow'><i class='icon-chevron-right icon-x'></i></div>
             </li>
@@ -117,30 +127,23 @@
     </div>
     <!-- 窗口end -->
     <div class='footer nav out'>
-        <a href='#index' data-rel='auto'>
-            <i class='icon-home icon-2x'></i>
-            首页
-        </a>
-        <a href='#categoryNav' data-rel='auto'>
-            <i class='icon-th-large icon-2x'></i>
-            分类导航
-        </a>
-        <a href='#resume' data-rel='auto'>
-            <i class='icon-github-alt icon-2x'></i>
-            求职简历
-        </a>
-        <a href='#personalCenter' data-rel='auto'>
-            <i class='icon-user icon-2x'></i>
-            个人中心
-        </a>
-    </div>
+		<a href='#index' data-rel='auto'> 
+			<div><i class='icon-home icon-2x'></i></div>首页
+		</a> 
+		<a href='#categoryNav' data-rel='auto'> 
+			<div><i class='icon-th-large icon-2x'></i></div>分类导航
+		</a> 
+		<a href='#resume' data-rel='auto'> 
+			<div><i class='icon-github-alt icon-2x'></i></div>求职简历
+		</a> 
+		<a href='#personalCenter' data-rel='auto'> 
+			<div><i class='icon-user icon-2x'></i></div>个人中心
+		</a>
+	</div>
     <script src="../js/fastclick/fastclick.js"></script>
-    <script>
-    	FastClick.attach(document.body);
-    </script>
+    <script>FastClick.attach(document.body);</script>
     <script src='../js/iscroll/iscroll-lite.js'></script>
     <script src="../js/mobilebone/mobilebone.js"></script>
-    
     <script src='index.js'></script>
 </body>
 </html>

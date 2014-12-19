@@ -1,7 +1,11 @@
 .page-root > .content{position: absolute;bottom: 50px;top:0;left:0;right:0;}
-.header{text-align: center;padding: 10px 8px;background-color: #fff;z-index: 10;position: relative;}
-.header>span{font-size: 20px;font-weight: bolder;}
-.header>a{display: block;}
+.header{background-color: #fff;z-index: 10;position: relative;padding:0 5px;text-align: center;}
+.header-title{font-size: 20px;font-weight: bolder;padding: 8px;display:inline-block}
+.header-btn{position:absolute;top:0;bottom:0;}
+.header-btn.right{right:5px;}
+.header-btn.left{left:5px;}
+.header-btn>div{display:table;height:100%;}
+.header-btn>div>a{display:table-cell;vertical-align:middle;padding:0 5px;}
 body>.footer{
 	position: absolute;left: 0;right: 0;bottom: 0;
 	-webkit-animation: .35s ease-in-out;	animation: .35s ease-in-out;
@@ -13,12 +17,13 @@ body>.footer.out { -webkit-transform: translateX(-100%); transform: translateX(-
 	color: #000;
 }
 .nav>a.active{color:#E59846;}
-.nav>a>i{display: block;margin: 2px 0}
+.nav>a>div{padding: 2px 0}
 
 .list>.list-item:last-child{border-bottom:1px solid #ccc;}
 .list-item{border-top:1px solid #ccc;}
 .list-item-icon{padding: 15px;}
 .list-item-arrow{padding: 8px;color: #666}
+.list-item.ms-click-active,.list-item:active{background-color: orange}
 
 .category-type{background-color: #E59846;}
 .category-type>a{display: block;float: left;width: 33.33333%;text-align: center;padding: 8px 0;color: #fff}
