@@ -1,3 +1,9 @@
+avalon.define("cat",function(vm){
+	vm.$mayLike = function(){
+		
+	};
+
+});
 new IScroll("#indexList");
 Mobilebone.callback = function(pageInto, pageOut) {
 	if(pageInto == pageOut) return;
@@ -26,3 +32,4 @@ Mobilebone.callback = function(pageInto, pageOut) {
 		}
 	}
 };
+
