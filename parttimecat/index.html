@@ -4,13 +4,13 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 	<title>hello world</title>
-    <link rel="stylesheet" type="text/css" href="../font-awesome/css/font-awesome.css">
-	<link rel="stylesheet" type="text/css" href="../css/mobilebone/mobilebone.css">
-    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../lib/font-awesome/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="../lib/mobilebone/mobilebone.css">
+    <link rel="stylesheet" type="text/css" href="../base/base.css">
     <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body ms-controller='cat'>
-    <div id='index' class='page out page-root'>
+    <div id='index' class='page in page-root'>
         <div class='content wbv'>
             <div class='header'>
             	<span class='header-title orange wb-flex1'>兼职猫</span>
@@ -29,14 +29,14 @@
                         </div>
                         <div class='list-item-arrow'><i class='icon-chevron-right icon-2x'></i></div>
                     </li>
-                    <li class='list-item wb wb-bac'>
+                    <li class='list-item wb wb-bac' ms-click='$mayLike()'>
                         <div class='list-item-icon'><i class='icon-calendar icon-2x blue'></i></div>
                         <div class='list-item-content wb-flex1 fz18'>
                           	  最新兼职
                         </div>
                         <div class='list-item-arrow'><i class='icon-chevron-right icon-2x'></i></div>
                     </li>
-                    <li class='list-item wb wb-bac'>
+                    <li class='list-item wb wb-bac' ms-click='$mayLike()'>
                         <div class='list-item-icon'><i class='icon-camera-retro icon-2x green'></i></div>
                         <div class='list-item-content wb-flex1 fz18'>
                           	  兼职旅行
@@ -84,66 +84,72 @@
     </div>
     <!-- 窗口begin -->
     <!-- 搜索页面 -->
-    <div id='indexSearch' class='page out page-window wbv' data-window>
-    	<div class='header'>
-           	<span class='header-title orange wb-flex1'>搜索</span>
-       		<div class='header-btn left'>
-       			<div>
-       				<a href='#index' data-rel='back'><i class='icon-chevron-left icon-2x'></i></a>
-       			</div>
+    <div id='indexSearch' class='page out page-window' data-window>
+        <div class='wbv wh100'>
+            <div class='header'>
+                <span class='header-title orange wb-flex1'>搜索</span>
+                <div class='header-btn left'>
+                    <div>
+                        <a href='#index' data-rel='back'><i class='icon-chevron-left icon-2x'></i></a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class='wb-flex1'>
+            <div class='wb-flex1'>
+            </div>
         </div>
     </div>
     <!-- 类型列表 -->
-    <div id='categoryList' class='page out page-window wbv' data-window>
-        <div class='header wb wb-bac'>
-        	<div class='header-btn'>
-            	<a href='#categoryNav' data-rel='back'><i class='icon-chevron-left icon-2x'></i></a>
+    <div id='categoryList' class='page out page-window' data-window>
+        <div class='wbv wh100'>
+            <div class='header'>
+                <span class='header-title orange wb-flex1'>兼职类型</span>
+                <div class='header-btn left'>
+                    <div>
+                        <a href='#categoryNav' data-rel='back'><i class='icon-chevron-left icon-2x'></i></a>
+                    </div>
+                </div>
             </div>
-        	<div class='header-title orange wb-flex1'>兼职类型</div>
+            <ul class='wb-flex1 list'>
+                <li class='list-item wb wb-bac'>
+                    <div class='list-item-content wb-flex1 fz14 pad8'>
+                        全部
+                    </div>
+                    <div class='list-item-arrow'><i class='icon-chevron-right icon-1x'></i></div>
+                </li>
+                <li class='list-item wb wb-bac'>
+                    <div class='list-item-content wb-flex1 fz14 pad8'>
+                        其它
+                    </div>
+                    <div class='list-item-arrow'><i class='icon-chevron-right icon-1x'></i></div>
+                </li>
+                <li class='list-item wb wb-bac'>
+                    <div class='list-item-content wb-flex1 fz14 pad8'>
+                        销售
+                    </div>
+                    <div class='list-item-arrow'><i class='icon-chevron-right icon-x'></i></div>
+                </li>
+            </ul>
         </div>
-        <ul class='wb-flex1 list'>
-            <li class='list-item wb wb-bac'>
-                <div class='list-item-content wb-flex1 fz14 pad8'>
-                  	全部
-                </div>
-                <div class='list-item-arrow'><i class='icon-chevron-right icon-1x'></i></div>
-            </li>
-            <li class='list-item wb wb-bac'>
-                <div class='list-item-content wb-flex1 fz14 pad8'>
-                  	其它
-                </div>
-                <div class='list-item-arrow'><i class='icon-chevron-right icon-1x'></i></div>
-            </li>
-            <li class='list-item wb wb-bac'>
-                <div class='list-item-content wb-flex1 fz14 pad8'>
-                  	销售
-                </div>
-                <div class='list-item-arrow'><i class='icon-chevron-right icon-x'></i></div>
-            </li>
-        </ul>
     </div>
     <!-- 窗口end -->
     <div class='footer nav out'>
 		<a href='#index' data-rel='auto'> 
-			<div><i class='icon-home icon-2x'></i></div>首页
+			<i class='icon-home icon-2x'></i><p>首页</p>
 		</a> 
 		<a href='#categoryNav' data-rel='auto'> 
-			<div><i class='icon-th-large icon-2x'></i></div>分类导航
+			<i class='icon-th-large icon-2x'></i><p>分类导航</p>
 		</a> 
 		<a href='#resume' data-rel='auto'> 
-			<div><i class='icon-github-alt icon-2x'></i></div>求职简历
+			<i class='icon-github-alt icon-2x'></i><p>求职简历</p>
 		</a> 
 		<a href='#personalCenter' data-rel='auto'> 
-			<div><i class='icon-user icon-2x'></i></div>个人中心
+			<i class='icon-user icon-2x'></i><p>个人中心</p>
 		</a>
 	</div>
-    <script src="../js/fastclick/fastclick.js"></script>
+    <script src="../lib/fastclick/fastclick.js"></script>
     <script>FastClick.attach(document.body);</script>
-    <script src='../js/iscroll/iscroll-lite.js'></script>
-    <script src="../js/mobilebone/mobilebone.js"></script>
+    <script src='../lib/iscroll/iscroll-lite.js'></script>
+    <script src="../lib/mobilebone/mobilebone.js"></script>
     <script src='index.js'></script>
 </body>
 </html>
