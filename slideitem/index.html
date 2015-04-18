@@ -6,8 +6,9 @@
     <link rel="stylesheet" type="text/css" href="../base/base.css">
     <link rel="stylesheet" type="text/css" href="../lib/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="../base/base.js">
-	<title>slide delete</title>
+	<title>slideitem</title>
 	<style>
+		.title{text-align: center;font-size: 2em;color: #888;font-weight: bolder;padding: 0.3em 0;border-bottom: 1px solid rgba(0,0,0,0.1);}
 		.list-item{
 		    color: #7E8B99;
 		    background-color: #EBFCF5;
@@ -48,6 +49,7 @@
 	</style>
 </head>
 <body ms-controller='body'>
+	<h1 class='title'>slideitem</h1>
 	<div class='list' ms-visible='dataList.length > 0'>
 	    <div ms-repeat='dataList' class='list-item' ms-data-el='el' data-repeat-rendered='$attach'
 	        style='-webkit-transform:translateX(0);transform:translateX(0)'>
@@ -68,25 +70,21 @@
 	</div>
     <script src='../lib/avalon/avalon.mobile.js'></script>
     <script>
-    	require(['../../slidedelete/slidedelete','../../base/base'],function(SlideDelete,Base){
-    		var slideDelete = new SlideDelete();
+    	require(['../../slideitem/slideitem','../../base/base'],function(SlideItem,Base){
+    		var slideitem = new SlideItem({
+    			targetSelector : "div.list-item-del"
+    		});
     		avalon.define("body",function(vm){
 	    		vm.dataList = [{
 	    			name : '条目1',checked : true
 	    		},{
-	    			name : '条目1',checked : true
+	    			name : '条目2',checked : true
 	    		},{
-	    			name : '条目1',checked : true
+	    			name : '条目3',checked : true
 	    		},{
-	    			name : '条目1',checked : true
+	    			name : '条目4',checked : true
 	    		},{
-	    			name : '条目1',checked : true
-	    		},{
-	    			name : '条目1',checked : true
-	    		},{
-	    			name : '条目1',checked : true
-	    		},{
-	    			name : '条目1',checked : true
+	    			name : '条目5',checked : true
 	    		}];
 	    		vm.$noop = avalon.noop;
 	    		vm.$del = function(){
@@ -101,10 +99,10 @@
 	                    avalon.each(this.querySelectorAll("div.list-item-center"),function(i,el){
 	                        if(i >= s && i < end){
 	                            var p = el.parentNode;
-	                            var obj = slideDelete.getEventObj(Base,p);
+	                            var obj = slideitem.getEventObj(Base,p);
 	                            obj.clickFn = function(){
-	                                if(slideDelete.curDelEl){
-	                                    slideDelete.setTranslateXAnimate(slideDelete.curDelEl,0);
+	                                if(slideitem.curSlideItem){
+	                                    slideitem.setTranslateXAnimate(slideitem.curSlideItem,0);
 	                                }
 	                            };
 	                            obj.activeClassEl = p;
